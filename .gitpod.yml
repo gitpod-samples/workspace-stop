@@ -1,0 +1,3 @@
+tasks:
+  - name: Enter workspace ID to stop
+    command: bash ./stop

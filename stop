@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+listening_port=1999
+listening_name='stop'
+
+cluster_hosts=( "${GITPOD_WORKSPACE_CLUSTER_HOST}" )
+if [[ "${cluster_hosts}" == ws-us* ]]; then {
+    cluster_hosts+=( ${cluster_hosts/ws-us/ws-eu}  )
+} else {
+    cluster_hosts+=( ${cluster_hosts/ws-eu/ws-us}  )
+} fi
+
+function stop() {
+    local id
+    for id in "${@}"; do {
+        for ch in "${cluster_hosts[@]}"; do {
+            curl -X POST -sS "https://${listening_port}-${id}.${ch}/${listening_name}"
+        } done
+        printf '#> %s stopped\n\n' "${id}"
+    } done
+}
+
+if [[ $# -gt 0 ]]; then
+    stop "${@}"
+else
+    while true; do {
+        read -r -p '# Enter workspace ID: ' id
+        stop "$id"
+    } done
+fi
