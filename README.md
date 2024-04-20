@@ -8,7 +8,7 @@ This is a workaround for Gitpod organization admins to manually force stop a Git
 
 If you're not using a [custom workspace image](https://www.gitpod.io/docs/configure/workspaces/workspace-image#configuring-a-workspace-image), this might be the easiest:
 - Go to https://gitpod.io/settings
-Scroll down to `Workspace images` option and click on "Change" button.
+- Scroll down to `Workspace images` option and click on "Change" button.
 - In the `Default Image` input field, enter the following and save:
 ```
 axonasif/workspace-full-stop@sha256:58217440cf2149d14b42e6ae53bbcd27b2bc2ee1f1050cd06ceac2c057d05f7e
