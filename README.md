@@ -21,7 +21,7 @@ Just copy the contents from [Dockerfile](./Dockerfile) to your own Dockerfile (e
 # How to use
 
 - Find the workspace ID that you want to stop from https://gitpod.io/usage
-- Open this repo on Gitpod: https://gitpod.io/github.com/gitpod-samples/workspace-stop
+- Open this repo on Gitpod: https://gitpod.io/#github.com/gitpod-samples/workspace-stop
 - You should see a open terminal on the bottom asking for a workspace id, simply paste the ID there and press enter/return.
 - If you want to stop multiple workspaces in bulk, then create a new terminal and provide all your workspace IDs separated by space: `./stop wsid1 wsid2 wsid3`
 
